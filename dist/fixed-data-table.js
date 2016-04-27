@@ -3584,7 +3584,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	   * @return {bool} True if browser supports css 3d transforms.
 	   */
 	  hasCSS3DTransforms: function hasCSS3DTransforms() {
-	    return !!hasPropertySupport(getVendorPrefixedName('transformStyle'), 'preserve-3d');
+	    return !!hasPropertySupport('transform-style', 'preserve-3d');
 	  },
 
 	  /**

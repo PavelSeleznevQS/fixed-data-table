@@ -32,7 +32,7 @@ var BrowserSupportCore = {
    * @return {bool} True if browser supports css 3d transforms.
    */
   hasCSS3DTransforms: function() {
-    return !!hasPropertySupport(getVendorPrefixedName('transformStyle'), 'preserve-3d');
+    return !!hasPropertySupport('transform-style', 'preserve-3d');
   },
 
   /**
