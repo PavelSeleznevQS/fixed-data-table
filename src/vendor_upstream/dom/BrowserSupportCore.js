@@ -11,6 +11,7 @@
 
 
 var getVendorPrefixedName = require('getVendorPrefixedName');
+var hasPropertySupport = require('hasPropertySupport');
 
 var BrowserSupportCore = {
   /**
@@ -31,7 +32,7 @@ var BrowserSupportCore = {
    * @return {bool} True if browser supports css 3d transforms.
    */
   hasCSS3DTransforms: function() {
-    return !!getVendorPrefixedName('perspective');
+    return !!hasPropertySupport(getVendorPrefixedName('transformStyle'), 'preserve-3d');
   },
 
   /**
