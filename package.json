@@ -40,8 +40,7 @@
     "build-docs": "./build_helpers/buildAPIDocs.sh",
     "publish-site": "./build_helpers/publishStaticSite.sh",
     "publish-package": "./build_helpers/publishPackage.sh",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm run build-dist"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
