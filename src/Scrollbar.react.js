@@ -54,6 +54,7 @@ var Scrollbar = React.createClass({
 
   getInitialState() /*object*/ {
     var props = this.props;
+    this.mounted = false;
     return this._calculateState(
       props.position || props.defaultPosition || 0,
       props.size,
@@ -186,6 +187,7 @@ var Scrollbar = React.createClass({
   },
 
   componentDidMount() {
+    this.mounted = true;
     this._mouseMoveTracker = new DOMMouseMoveTracker(
       this._onMouseMove,
       this._onMouseMoveEnd,

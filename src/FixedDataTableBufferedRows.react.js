@@ -47,6 +47,7 @@ var FixedDataTableBufferedRows = React.createClass({
   },
 
   getInitialState() /*object*/ {
+    this.mounted = false;
     this._rowBuffer =
       new FixedDataTableRowBuffer(
         this.props.rowsCount,
@@ -54,6 +55,7 @@ var FixedDataTableBufferedRows = React.createClass({
         this.props.height,
         this._getRowHeight
       );
+
     return ({
       rowsToRender: this._rowBuffer.getRows(
         this.props.firstRowIndex,
@@ -67,6 +69,7 @@ var FixedDataTableBufferedRows = React.createClass({
   },
 
   componentDidMount() {
+    this.mounted = true;
     setTimeout(this._updateBuffer, 1000);
   },
 
@@ -95,7 +98,7 @@ var FixedDataTableBufferedRows = React.createClass({
   },
 
   _updateBuffer() {
-    if (this.isMounted()) {
+    if (this.mounted) {
       this.setState({
         rowsToRender: this._rowBuffer.getRowsWithUpdatedBuffer(),
       });
